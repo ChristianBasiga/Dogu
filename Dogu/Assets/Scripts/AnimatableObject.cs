@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-interface AnimatableObject
+
+namespace Dogu
 {
-    //to manage an objects animations, this is hardd coupling, because AnimatableObject needs AnimationManager to be set,
-    //and AnimationManagers need reference back to AnimatableObject so it knows what it's managing
-    AnimationManager animationManager { set; get; }   
-    GameObject gameObject { set; get; }
+    //Used to be interface but made abstract class so it can inherit MonoBehaviour so it can be public
+    //Making this to avoid having to check if null after trying to get Animator on object
+    //Better to prevent error then check for error and let it happen
+    public abstract class AnimatableObject : MonoBehaviour
+    {
+          public abstract State state { set; get; }    
+    }
 
+  
 }
-

@@ -1,9 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-struct Stats
+﻿namespace Dogu
 {
-    int hp;
-    //
+    public struct Stats
+    {
+        public int hp;
+        public float speed;
+
+
+        public Stats(int hp, float speed)
+        {
+            this.hp = hp;
+            this.speed = speed;
+        }
+    }
 }
